@@ -1,0 +1,80 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.home{
+    background-image: url(../assets/bgimg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100%;
+    /* border: 1px solid black; */
+}
+.navbar{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5% 2%;
+    /* border: 1px solid black;  */
+}
+img{
+    width: 15%; 
+    margin-top: 1%;  
+}
+img .logo{
+    width: 10%;
+    height: 12%;
+    /* margin: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-links{
+    display: flex;
+    justify-content: center; 
+    width: 100%; 
+}   
+.nav-links a{
+    margin: 0 1rem; 
+    text-decoration: none; 
+    color: #000; 
+    font-weight: bold; 
+    font-size: 18px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.nav-links a:hover {
+  transform: translateY(-3px);
+}
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: #000;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s ease;
+}
+.nav-links a:hover::before {
+  transform: scaleY(1);
+}
+.btn-links{
+    display: flex;
+    justify-content: flex-end; 
+    width: 20%; 
+    height: 20%;
+}
+.btn-links a{
+    margin: 0 1rem; 
+    text-decoration: none; 
+    color: #000; 
+    font-weight: bold; 
+    font-size: 18px;
+}

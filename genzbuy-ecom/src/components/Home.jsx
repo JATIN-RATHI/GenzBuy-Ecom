@@ -50,7 +50,7 @@ const Home = () => {
       </div>
       {/* card carousel */}
       <div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel">
-        {/* <div className="carousel-inner"> */}
+        <div className="carousel-inner">
           {cardimg.map((item, index) => (
             <div
               key={item.id}
@@ -68,7 +68,7 @@ const Home = () => {
           <div className="carousel-item">
             <img src="..." className="d-block w-100" alt="..."/>
           </div>
-        {/* </div> */}
+        </div>
         <a className="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
           <span className="sr-only">Previous</span>

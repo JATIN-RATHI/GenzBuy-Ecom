@@ -1,20 +1,21 @@
 
 // best sellers image  
 const bestSellerimg = [
-  { id: 7, name: "bscargo", url: "/images/bscargo.webp" },
-  { id: 8, name: "bsjeans", url: "/images/bsjeans.webp" },
-  { id: 9, name: "bsshirt", url: "/images/bsshirt.webp" },
+  { id: 1, name: "bscargo", url: "/images/bscargo.webp" },
+  { id: 2, name: "bsjeans", url: "/images/bsjeans.webp" },
+  { id: 3, name: "bsshirt", url: "/images/bsshirt.webp" },
+  { id: 4, name: "bstshirt", url: "/images/bstshirt.webp" },
 ];
 
 // images for carousel 
 const carouselimg = [
-  { id: 10, name: "carousel1", url: "/images/carousel1.webp" },
-  { id: 11, name: "carousel2", url: "/images/carousel2.webp" },
-  { id: 12, name: "carousel3", url: "/images/carousel3.webp" },
-  { id: 13, name: "carousel4", url: "/images/carousel4.webp" },
-  { id: 14, name: "carousel5", url: "/images/carousel5.webp" },
-  { id: 15, name: "carousel6", url: "/images/carousel6.webp" },
-  { id: 16, name: "carousel7", url: "/images/carousel7.webp" },
+  { id: 1, name: "carousel1", url: "/images/carousel1.webp" },
+  { id: 2, name: "carousel2", url: "/images/carousel2.webp" },
+  { id: 3, name: "carousel3", url: "/images/carousel3.webp" },
+  { id: 4, name: "carousel4", url: "/images/carousel4.webp" },
+  { id: 5, name: "carousel5", url: "/images/carousel5.webp" },
+  { id: 6, name: "carousel6", url: "/images/carousel6.webp" },
+  { id: 7, name: "carousel7", url: "/images/carousel7.webp" },
 ];
 
 // images for cards
@@ -31,30 +32,30 @@ const cardimg = [
 
 // images for season card
 const seasoncardimg = [
-    { id: 25, name: "ssncard1", url: "/images/ssncard1.webp" },
-    { id: 26, name: "ssncard2", url: "/images/ssncard2.webp" },
-    { id: 27, name: "ssncard3", url: "/images/ssncard3.webp" },
-    { id: 28, name: "ssncard4", url: "/images/ssncard4.webp" },
-    { id: 29, name: "ssncard5", url: "/images/ssncard5.webp" },
-    { id: 30, name: "ssncard6", url: "/images/ssncard6.webp" },
-    { id: 31, name: "ssncard7", url: "/images/ssncard7.webp" },
+    { id: 1, name: "ssncard1", url: "/images/ssncard1.webp" },
+    { id: 2, name: "ssncard2", url: "/images/ssncard2.webp" },
+    { id: 3, name: "ssncard3", url: "/images/ssncard3.webp" },
+    { id: 4, name: "ssncard4", url: "/images/ssncard4.webp" },
+    { id: 5, name: "ssncard5", url: "/images/ssncard5.webp" },
+    { id: 6, name: "ssncard6", url: "/images/ssncard6.webp" },
+    { id: 7, name: "ssncard7", url: "/images/ssncard7.webp" },
 ];
 
 // images for trending category
 const trendimg = [
-    { id: 32, name: "trendCatg1", url: "/images/trendCatg1.webp" },
-    { id: 33, name: "trendCatg2", url: "/images/trendCatg2.webp" },
-    { id: 34, name: "trendCatg3", url: "/images/trendCatg3.webp" },
-    { id: 35, name: "trendCatg4", url: "/images/trendCatg4.webp" },
-    { id: 36, name: "trendCatg5", url: "/images/trendCatg5.webp" },
+    { id: 1, name: "trendCatg1", url: "/images/trendCatg1.webp" },
+    { id: 2, name: "trendCatg2", url: "/images/trendCatg2.webp" },
+    { id: 3, name: "trendCatg3", url: "/images/trendCatg3.webp" },
+    { id: 4, name: "trendCatg4", url: "/images/trendCatg4.webp" },
+    { id: 5, name: "trendCatg5", url: "/images/trendCatg5.webp" },
 ];
 
 // wallpaper of wrogn
 const wwimg = [
-    { id: 37, name: "ww1", url: "/images/ww1.webp" },
-    { id: 38, name: "ww2", url: "/images/ww2.webp" },
-    { id: 39, name: "ww3", url: "/images/ww3.webp" },
-   
+    { id: 1, name: "ww1", url: "/images/ww1.webp" },
+    { id: 2, name: "ww2", url: "/images/ww2.webp" },
+    { id: 3, name: "ww3", url: "/images/ww3.webp" },
+
 ];
 
 const imageBanner = [
@@ -65,4 +66,12 @@ const imageBanner = [
   { id: 5, name: "ban5", url: "/images/ban5.webp" },
   { id: 6, name: "ban6", url: "/images/ban6.webp" },
 ];
-export { cardimg, imageBanner, carouselimg, bestSellerimg, seasoncardimg, trendimg, wwimg};
+
+const imageBanner2 = [
+  { id: 1, name: "ban7", url: "/images/ban7.webp" },
+  { id: 2, name: "ban8", url: "/images/ban8.webp" },
+  { id: 3, name: "ban9", url: "/images/ban9.webp" },
+  { id: 4, name: "ban10", url: "/images/ban10.webp" },
+  { id: 5, name: "ban11", url: "/images/ban11.webp" },
+];
+export { cardimg, imageBanner, carouselimg, bestSellerimg, seasoncardimg, trendimg, wwimg, imageBanner2 };

@@ -2,31 +2,12 @@ import React from 'react';
 import '../pages/AllProducts.css'; 
 import { seasoncardimg } from '../components/imgColl.jsx';
 import App from '../pages/FilterData.jsx';
+import '..pages/navbar.css';
 function AllProducts() {
   
   return (
     <>
       <div className="samehome">
-        <div className="navbar">
-          <div className="nav-links">
-            <img src="/images/wrogn-logo.png" alt="Logo" className="logo" />
-            <a href="/">EOSS</a>
-            <a href="/products">EXCLUSIVE</a>
-            <a href="/about">ALL PRODUCTS</a>
-            <a href="/contact">TOPWEAR</a>
-            <a href="/contact">BOTTOMWEAR</a>
-            <a href="/contact">FOOTWEAR</a>
-            <a href="/contact">FRESH ARRIVALS</a>
-            <a href="/contact">ESSENTIALS</a>
-          </div>
-          <div className="btn-links">
-            <form className="searchbar d-flex" role="search">
-              <input className="searchbar form-control me-2" type="search" placeholder="SEARCH" aria-label="Search" />
-            </form>
-            <img src="./images/icons8-account.gif" alt="User Icon" className="user-icon" />
-            <img src="./images/icons8-shopping-bag.gif" alt="Cart Icon" className="cart-icon" />
-          </div>
-        </div>
         {/* carousel for banners */}
         <div id="allproductcarousel" className="allproductcarousel carousel slide p-1" data-bs-ride="carousel">
           <div className="carousel-inner2 rounded-4">

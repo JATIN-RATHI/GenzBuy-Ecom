@@ -6,14 +6,11 @@ import BottomWear from "./pages/BottomWear";
 import Footwear from "./pages/Footwear";
 import FreshArrivals from "./pages/FreshArrivals";
 import Essentials from "./pages/Essentials";
-import ReactDOM from 'react-dom/client';
-import Navbar from "./pages/Navbar";
 
 function App() {
 
   return (
     <BrowserRouter>
-    <Navbar />  
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/AllProducts" element={<AllProducts />} />

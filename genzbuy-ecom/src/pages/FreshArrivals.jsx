@@ -1,21 +1,21 @@
 import React from 'react';
 import App from './FilterData.jsx';
-import {fresharrivalimages} from '../components/imgColl.jsx'
-const FreshArrivals =()=>{
-    return(
-        <>
-         <div className="samehome">
+import { Link } from 'react-router-dom';
+import { fresharrivalimages } from '../components/imgColl.jsx'
+const FreshArrivals = () => {
+  return (
+    <>
+      <div className="samehome">
         <div className="navbar">
           <div className="nav-links">
             <img src="/images/wrogn-logo.png" alt="Logo" className="logo" />
-            <a href="/">EOSS</a>
-            <a href="/products">EXCLUSIVE</a>
-            <a href="/about">ALL PRODUCTS</a>
-            <a href="/contact">TOPWEAR</a>
-            <a href="/contact">BOTTOMWEAR</a>
-            <a href="/contact">FOOTWEAR</a>
-            <a href="/contact">FRESH ARRIVALS</a>
-            <a href="/contact">ESSENTIALS</a>
+            <Link to="/">Home</Link>
+            <Link to="/allproducts">All Products</Link>
+            <Link to="/topwear">Top Wear</Link>
+            <Link to="/bottomwear">Bottom Wear</Link>
+            <Link to="/footwear">Footwear</Link>
+            <Link to="/fresharrivals">Fresh Arrivals</Link>
+            <Link to="/essentials">Essentials</Link>
           </div>
           <div className="btn-links">
             <form className="searchbar d-flex" role="search">
@@ -36,23 +36,23 @@ const FreshArrivals =()=>{
         <div className="cards-wrapper d-flex flex-wrap justify-content-space-between" >
           {fresharrivalimages.map((item) => (
             <div className="card" key={item.id}>
-                <div className="img">
-                  <img src={`${item.url}`} className=" w-100 h-100 rounded-3"/>
+              <div className="img">
+                <img src={`${item.url}`} className=" w-100 h-100 rounded-3" />
+              </div>
+              <div className="card-body p-1">
+                <div className="card-text">
+                  <p className="p1">₹1,439</p>
+                  <p className="p2"><s>₹2,399</s></p>
+                  <p className="p3">(40% OFF)</p>
                 </div>
-                <div className="card-body p-1">
-                  <div className="card-text">
-                    <p className="p1">₹1,439</p>
-                    <p className="p2"><s>₹2,399</s></p>
-                    <p className="p3">(40% OFF)</p>
-                  </div>              
-                  <a href="#" className="btn border border-dark rounded">Add To Bag</a>
-                </div>
+                <a href="#" className="btn border border-dark rounded">Add To Bag</a>
+              </div>
             </div>
           ))}
         </div>
       </div>
       <App />
-        </>
-    )
+    </>
+  )
 }
 export default FreshArrivals;

@@ -1,7 +1,8 @@
-import React from 'react';
+// import React from 'react';
 import '../pages/AllProducts.css';
-import { seasoncardimg } from '../components/imgColl.jsx';
+// import { seasoncardimg } from '../components/imgColl.jsx';
 import App from '../pages/FilterData.jsx';
+import { Link } from 'react-router-dom';
 function AllProducts() {
 
   return (
@@ -10,14 +11,13 @@ function AllProducts() {
         <div className="navbar">
           <div className="nav-links">
             <img src="/images/wrogn-logo.png" alt="Logo" className="logo" />
-            <a href="/">EOSS</a>
-            <a href="/products">EXCLUSIVE</a>
-            <a href="/about">ALL PRODUCTS</a>
-            <a href="/contact">TOPWEAR</a>
-            <a href="/contact">BOTTOMWEAR</a>
-            <a href="/contact">FOOTWEAR</a>
-            <a href="/contact">FRESH ARRIVALS</a>
-            <a href="/contact">ESSENTIALS</a>
+            <Link to="/">Home</Link>
+            <Link to="/allproducts">All Products</Link>
+            <Link to="/topwear">Top Wear</Link>
+            <Link to="/bottomwear">Bottom Wear</Link>
+            <Link to="/footwear">Footwear</Link>
+            <Link to="/fresharrivals">Fresh Arrivals</Link>
+            <Link to="/essentials">Essentials</Link>
           </div>
           <div className="btn-links">
             <form className="searchbar d-flex" role="search">

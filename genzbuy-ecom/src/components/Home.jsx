@@ -1,6 +1,7 @@
 import React from "react";
 import "../components/Home.css";
 import { imageBanner, imageBanner2 } from "../components/imgColl.jsx";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -9,14 +10,13 @@ const Home = () => {
         <div className="navbar">
           <div className="nav-links">
             <img src="/images/wrogn-logo.png" alt="Logo" className="logo" />
-            <a href="/">EOSS</a>
-            <a href="/products">EXCLUSIVE</a>
-            <a href="/about">ALL PRODUCTS</a>
-            <a href="/contact">TOPWEAR</a>
-            <a href="/contact">BOTTOMWEAR</a>
-            <a href="/contact">FOOTWEAR</a>
-            <a href="/contact">FRESH ARRIVALS</a>
-            <a href="/contact">ESSENTIALS</a>
+            <Link to="/">Home</Link>
+            <Link to="/allproducts">All Products</Link>
+            <Link to="/topwear">Top Wear</Link>
+            <Link to="/bottomwear">Bottom Wear</Link>
+            <Link to="/footwear">Footwear</Link>
+            <Link to="/fresharrivals">Fresh Arrivals</Link>
+            <Link to="/essentials">Essentials</Link>
           </div>
           <div className="btn-links">
             <form className="searchbar d-flex" role="search">
@@ -203,7 +203,7 @@ const Home = () => {
 
       {/* 2nd Carousel */}
       <div id="carouselExampleAutoplaying" className="carousel slide p-1" data-bs-ride="carousel">
-        <div className="carousel-inner rounded-4 h-95 w-100">
+        <div className="carousel-inner rounded-4 h-95 w-100 ">
           {imageBanner2.map((item, index) => (
             <div
               key={item.id}

@@ -34,6 +34,7 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .nav-links{
     display: flex;
@@ -48,14 +49,14 @@ img{
     align-items: center;
     color: #000; 
     font-weight: bold; 
-    font-size: 12px;
+    font-size: 15px;
     position: relative;
     transition: all 0.3s ease;
 }
-.nav-links a:hover {
+.nav-links Link:hover {
   transform: translateY(-3px);
 }
-.nav-links a::before {
+.nav-links Link::before {
   content: "";
   position: absolute;
   bottom: -1px;
@@ -67,7 +68,7 @@ img{
   transform-origin: bottom;
   transition: transform 0.4s ease;
 }
-.nav-links a:hover::before {
+.nav-links Link:hover::before {
   transform: scaleY(1);
 }
 .btn-links{

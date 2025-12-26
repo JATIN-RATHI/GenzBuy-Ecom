@@ -1,0 +1,128 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.samehome{
+    background-size: cover;
+    min-height: 70vh;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 0;
+    max-width: 1400px;
+    flex-wrap: wrap;    
+}
+img{
+    cursor: pointer;
+    width: 165px;
+    height: auto;
+}
+.logo{
+    width: 5%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap;
+    width: 70%; 
+}   
+.nav-links a{
+    margin: 0 1rem; 
+    text-decoration: none; 
+    display: flex;
+    align-items: center;
+    color: #000; 
+    font-weight: bold; 
+    font-size: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.nav-links a:hover {
+  transform: translateY(-3px);
+}
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: #000;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s ease;
+}
+.nav-links a:hover::before {
+  transform: scaleY(1);
+}
+.btn-links{
+    display: flex;
+    justify-content: flex-end; 
+    flex-wrap: wrap;
+    width: 30%;
+}
+.searchbar{
+    width: 55%;
+    display: flex;
+    margin-left: 1%;
+    justify-content: flex-end;
+}
+.btn-links img{
+    margin: 0 0.5rem; 
+    width: auto;
+    height: 38px;
+    padding: 9px 0px;
+    transition: all 0.5s ease;
+}
+.btn-links .signIn:hover{
+    background-color: #fee377;
+    color: #000;
+}
+.allproductcarousel{
+    width: 100%;
+    height: 50vh;
+}
+.carousel-inner2{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.carl-img{
+    width: 90%;
+    height: 54vh;
+    margin: auto;
+    border-radius: 26px
+}
+.arrow{
+    font-size: 20px;
+}
+.rightdiv .card {
+    width: 30%;
+    height: 36vh;
+    margin: 9% 1% 19% 0%;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: none;
+    border-radius: 54px;
+}
+.rightdiv{
+    float: inline-end;
+    max-width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

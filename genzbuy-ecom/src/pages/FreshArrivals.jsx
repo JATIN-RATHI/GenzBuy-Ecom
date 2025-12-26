@@ -1,0 +1,58 @@
+import React from 'react';
+import App from './FilterData.jsx';
+import { Link } from 'react-router-dom';
+import { fresharrivalimages } from '../components/imgColl.jsx'
+const FreshArrivals = () => {
+  return (
+    <>
+      <div className="samehome">
+        <div className="navbar">
+          <div className="nav-links">
+            <img src="/images/wrogn-logo.png" alt="Logo" className="logo" />
+            <Link to="/">Home</Link>
+            <Link to="/allproducts">All Products</Link>
+            <Link to="/topwear">Top Wear</Link>
+            <Link to="/bottomwear">Bottom Wear</Link>
+            <Link to="/footwear">Footwear</Link>
+            <Link to="/fresharrivals">Fresh Arrivals</Link>
+            <Link to="/essentials">Essentials</Link>
+          </div>
+          <div className="btn-links">
+            <form className="searchbar d-flex" role="search">
+              <input className="searchbar form-control me-2" type="search" placeholder="SEARCH" aria-label="Search" />
+            </form>
+            <img src="./images/icons8-account.gif" alt="User Icon" className="user-icon" />
+            <img src="./images/icons8-shopping-bag.gif" alt="Cart Icon" className="cart-icon" />
+          </div>
+        </div>
+        {/* carousel for banners */}
+        <div id="allproductcarousel" className="allproductcarousel carousel slide p-1" data-bs-ride="carousel">
+          <div className="carousel-inner2 rounded-4">
+            <img src="/images/Footwear/footwearbanner.webp" className="carl-img carousel-item active" alt="footwearbanner" />
+          </div>
+        </div>
+      </div>
+      <div className="rightdiv">
+        <div className="cards-wrapper d-flex flex-wrap justify-content-space-between" >
+          {fresharrivalimages.map((item) => (
+            <div className="card" key={item.id}>
+              <div className="img">
+                <img src={`${item.url}`} className=" w-100 h-100 rounded-3" />
+              </div>
+              <div className="card-body p-1">
+                <div className="card-text">
+                  <p className="p1">₹1,439</p>
+                  <p className="p2"><s>₹2,399</s></p>
+                  <p className="p3">(40% OFF)</p>
+                </div>
+                <a href="#" className="btn border border-dark rounded">Add To Bag</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <App />
+    </>
+  )
+}
+export default FreshArrivals;

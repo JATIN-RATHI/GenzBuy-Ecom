@@ -1,0 +1,236 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* background-color: #f7cbd8; */
+    /* position: relative; */
+}
+.home{
+    background-size: cover;
+    min-height: 96vh;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 0;
+    max-width: 1400px;
+    flex-wrap: wrap;    
+}
+img{
+    cursor: pointer;
+    width: 165px;
+    height: auto;
+}
+.logo{
+    width: 5%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap;
+    width: 70%; 
+}   
+.nav-links a{
+    margin: 0 1rem; 
+    text-decoration: none; 
+    display: flex;
+    align-items: center;
+    color: #000; 
+    font-weight: bold; 
+    font-size: 15px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.nav-links Link:hover {
+  transform: translateY(-3px);
+}
+.nav-links Link::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: #000;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s ease;
+}
+.nav-links Link:hover::before {
+  transform: scaleY(1);
+}
+.btn-links{
+    display: flex;
+    justify-content: flex-end; 
+    flex-wrap: wrap;
+    width: 30%;
+}
+.searchbar{
+    /* background-image: url("magnifying-glass.png"); */
+    width: 55%;
+    display: flex;
+    margin-left: 1%;
+    justify-content: flex-end;
+}
+.btn-links img{
+    margin: 0 0.5rem; 
+    width: auto;
+    height: 38px;
+    padding: 9px 0px;
+    transition: all 0.5s ease;
+}
+.btn-links .signIn:hover{
+    background-color: #fee377;
+    color: #000;
+}
+.head2{
+    color: #333;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin: 4px 0px 10px 0px;
+    padding: 0.5%;
+    border-radius: 30px;
+    width: 100%;
+}
+.card-deck .img1{
+    width: 100%;
+    height: 50vh;
+}
+.video-container{
+    background-color: #f3f3f3;
+    border-color: #434141;
+    /* border: #434141; */
+    width: 89%;
+    height: 154vh;
+    display: flex;
+    margin: auto;
+    /* padding: 20px; */
+    /* flex-direction: row; */
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-radius: 26px;
+}
+video{
+    width: 92%;
+    height: 88vh;
+    object-fit: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 26px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+.para-2{
+    position: absolute;
+    font-size: 23px;
+    font-weight: 900;
+    transform: rotate(270deg);
+    transform-origin: right;
+    right: 54px;
+    top: 7%;
+}
+#carouselExampleControls {
+    margin: 58% 0% 7% 0%;
+}
+.carousel-inner{
+  border-radius: 26px;
+  padding: 4px;
+}
+.head3{
+    text-align: center; 
+    font-size: 1em; 
+    font-weight: bolder; 
+    color: #333; 
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    margin-bottom: 1%;
+    position: absolute;
+    left: 42%;
+    top: 7px;
+}
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: #ffff;
+  width: 100%;
+  margin: -3% 0% 0% 0%;
+  border-radius: 26px;
+  height : 68vh;
+  padding: 10px;
+}
+
+.card {
+  width: 18%;
+  height :36vh;
+  margin: 87px 18px;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+  border-radius: 54px;
+}
+.card-text p{
+  margin-bottom: .25rem;
+}
+.card-title {
+  font-size: 12px;
+  font-weight: bold;
+}
+.card-text{
+  display: flex;
+}
+.p1 {
+  margin-right: 8px ;
+  padding: 0;
+}
+.p2 {
+  margin-right: 8px ;
+  padding: 0;
+}
+.p3 {
+  margin-right: 8px ;
+  padding: 0;
+}
+.btn {
+  position: absolute;
+  width: 100%;
+}
+.sr-only img{
+  width: 36px;
+  height: auto;
+
+}
+.best-seller{
+  padding: 0% 2.3%;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #e1e1e1;
+  width: 3vh;
+  height: 3vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+  .card img {
+    height: 11em;
+  }
+}

@@ -1,0 +1,81 @@
+/* Container */
+.container2 {
+  width: 17%;
+  margin: 50px 61px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+}
+
+.viewAll{
+    font-size: 27px;
+    font-weight: bold;
+    margin-top: -15%
+}
+
+.title {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: left;
+  color: #333;
+  margin: 29px 0px;
+}
+
+/* Filter group */
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group h3 {
+  font-size: 23px;
+  margin-bottom: 28px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* List styles */
+.filter-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.color-option {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.color-option input {
+  margin-left: 10px;
+}
+
+/* Labels */
+label {
+  margin-left: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Button */
+.show-btn {
+  margin-top: 8px;
+  padding: 5px 10px;
+  font-size: 13px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.show-btn:hover {
+  background: #0056b3;
+}

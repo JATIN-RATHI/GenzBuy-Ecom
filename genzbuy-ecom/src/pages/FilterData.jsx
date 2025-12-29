@@ -20,7 +20,7 @@ const FilterData = {
   fit: ["Regular", "Slim", "Relaxed"],
 };
 
-function App() {
+function FilterSection() {
   const [showAllCategories, setShowAllCategories] = useState(false);
 
   // Show only 5 categories at first
@@ -122,4 +122,4 @@ function App() {
   );
 }
 
-export default App;
+export default FilterSection;

@@ -6,9 +6,10 @@ import BottomWear from "./pages/BottomWear";
 import Footwear from "./pages/Footwear";
 import FreshArrivals from "./pages/FreshArrivals";
 import Essentials from "./pages/Essentials";
+import { client } from "./ContentfulClient";
 
 function App() {
-
+  console.log(client);
   return (
     <BrowserRouter>
       <Routes>

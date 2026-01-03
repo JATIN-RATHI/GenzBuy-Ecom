@@ -1,17 +1,7 @@
-/* Container */
-.container2 {
-  width: 17%;
-  margin: 50px 61px;
-  padding: 15px;
-  background: #fff;
-  border-radius: 6px;
-  font-family: Arial, sans-serif;
-}
 
 .viewAll{
     font-size: 27px;
     font-weight: bold;
-    margin-top: -15%
 }
 
 .title {

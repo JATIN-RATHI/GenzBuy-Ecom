@@ -4,9 +4,13 @@ html, body {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
 .samehome{
     background-size: cover;
-    min-height: 70vh;
     min-width: 100%;
     display: flex;
     flex-direction: column;
@@ -93,36 +97,56 @@ img{
 }
 .allproductcarousel{
     width: 100%;
-    height: 50vh;
 }
 .carousel-inner2{
     width: 100%;
-    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center
 }
 .carl-img{
     width: 90%;
-    height: 54vh;
     margin: auto;
     border-radius: 26px
 }
 .arrow{
     font-size: 20px;
 }
-.rightdiv .card {
-    width: 30%;
-    height: 36vh;
-    margin: 9% 1% 19% 0%;
-    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-    border: none;
-    border-radius: 54px;
+
+.leftDiv {
+    padding: 3% 0% 0% 3%;
+    max-width: 20%;
+    display: flex;
+    flex-direction: column;
 }
+
 .rightdiv{
     float: inline-end;
     max-width: 80%;
     height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+.rightdiv .card {
+    min-width: 27%;
+    height: auto;
+    display: flex;
+    margin: 40px 18px;
+    border: none;
+    box-shadow: none;
+}
+
+@media (max-width: 1440px) {
+    .samehome {
+        min-height: auto;
+    }
+
+    .allproductcarousel, .allproductcarousel .img {
+        height: auto;
+    }
+    
+    .carousel-inner2 {
+        height: auto;
+    }
 }

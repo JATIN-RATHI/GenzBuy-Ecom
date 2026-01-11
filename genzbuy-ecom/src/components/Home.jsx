@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../components/Home.css";
-import { imageBanner, imageBanner2 } from "../components/imgColl.jsx";
+import { imageBanner, imageBanner2, seasoncardimg } from "../components/imgColl.jsx";
 import { Link } from "react-router-dom";
+import {client} from "../ContentfulClient.js";
 
 const Home = () => {
+  const [loading,setLoading]= useState(true);
+  const [fashion,setFashion]= useState();
+  useEffect(() => {
+    const fetchdata= async ()=>{
+      try{
+        const entries = await client.getEntries({content_type: "homePage"}); 
+        console.log(entries);
+        setLoading(false);
+        setFashion(entries.items);
+      }catch(error){
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      }
+    }
+    fetchdata();
+    window.scrollTo(0, 0);
+  }, [loading]);
+
+  if(loading)return <p>Loading...</p>
+
   return (
     <>
       <div className="home">
@@ -30,6 +51,7 @@ const Home = () => {
         <div id="carouselExampleAutoplaying" className="carousel slide p-1" data-bs-ride="carousel">
           <div className="carousel-inner rounded-4">
             {imageBanner.map((item, index) => (
+              console.log(item.fields),
               <div
                 key={item.id}
                 className={`carousel-item ${index === 0 ? "active" : ""}`}
@@ -57,113 +79,28 @@ const Home = () => {
         </video>
         <p className="para-2">VIRAT HAS A MESSAGE FOR YOU</p>
 
-        <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+        <div id="carouselExampleControls" className="carousel slide" data-ride="carousel"> {/* SEASON'S TOP PICKS starting from here */}
           <div className="carousel-inner w-100%">
             <div className="carousel-item active p-relative mt-3">
               <p className="head3">SEASON'S TOP PICKS</p>
-              <div className="cards-wrapper">
-                <div className="card">
-                  <div className="img">
-                    <img src="/images/ssncard1.webp" className=" w-100 h-100 rounded-3" alt="..." />
-                  </div>
-                  <div className="card-body p-1">
-                    <div className="card-text">
-                      <p className="p1">₹1,439</p>
-                      <p className="p2"><s>₹2,399</s></p>
-                      <p className="p3">(40% OFF)</p>
+
+              <div className="rightdivcards cards-wrapper d-flex flex-wrap justify-content-space-between" >
+                {seasoncardimg.map((item) => (
+                  <div className="card" key={item.id}>
+                    <div className="img">
+                      <img src={`${item.url}`} className=" w-100 h-100 rounded-3" />
                     </div>
-                    <h5 className="card-title">Solid Stretch Slim Fit Shirt | Navy...</h5>
-                    <a href="#" className="btn border border-dark rounded">Add To Bag</a>
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="img">
-                    <img src="images/ssncard2.webp" className="w-100 h-auto rounded-3" alt="..." />
-                  </div>
-                  <div className="card-body p-1">
-                    <div className="card-text">
-                      <p className="p1">₹1,439</p>
-                      <p className="p2"><s>₹2,399</s></p>
-                      <p className="p3">(40% OFF)</p>
+                    <div className="card-body p-1">
+                      <div className="card-text">
+                        <p className="p1">₹1,439</p>
+                        <p className="p2"><s>₹2,399</s></p>
+                        <p className="p3">(40% OFF)</p>
+                      </div>
+                      <h5 className="card-title">{item.name}</h5>
+                      <a href="#" className="btn border border-dark rounded">Add To Bag</a>
                     </div>
-                    <h5 className="card-title">Solid Stretch Slim Fit Shirt | Navy...</h5>
-                    <a href="#" className="btn border border-dark rounded">Add To Bag</a>
                   </div>
-                </div>
-                <div className="card">
-                  <div className="img">
-                    <img src="/images/ssncard3.webp" className="w-100 h-auto rounded-3" alt="..." />
-                  </div>
-                  <div className="card-body p-1">
-                    <div className="card-text">
-                      <p className="p1">₹1,439</p>
-                      <p className="p2"><s>₹2,399</s></p>
-                      <p className="p3">(40% OFF)</p>
-                    </div>
-                    <h5 className="card-title">Solid Stretch Slim Fit Shirt | Navy...</h5>
-                    <a href="#" className="btn border border-dark rounded">Add To Bag</a>
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="img">
-                    <img src="/images/ssncard4.webp" className="w-100 h-auto rounded-3" alt="..." />
-                  </div>
-                  <div className="card-body p-1">
-                    <div className="card-text">
-                      <p className="p1">₹1,439</p>
-                      <p className="p2"><s>₹2,399</s></p>
-                      <p className="p3">(40% OFF)</p>
-                    </div>
-                    <h5 className="card-title">Solid Stretch Slim Fit Shirt | Navy...</h5>
-                    <a href="#" className="btn border border-dark rounded">Add To Bag</a>
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="img">
-                    <img src="/images/ssncard5.webp" className="w-100 h-auto rounded-3" alt="..." />
-                  </div>
-                  <div className="card-body p-1">
-                    <div className="card-text">
-                      <p className="p1">₹1,439</p>
-                      <p className="p2"><s>₹2,399</s></p>
-                      <p className="p3">(40% OFF)</p>
-                    </div>
-                    <h5 className="card-title">Solid Stretch Slim Fit Shirt | Navy...</h5>
-                    <a href="#" className="btn border border-dark rounded">Add To Bag</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="cards-wrapper">
-                <div className="card">
-                  <div className="img">
-                    <img src="/images/ssncard6.webp" className="w-100 h-auto rounded-3" alt="..." />
-                  </div>
-                  <div className="card-body p-1">
-                    <div className="card-text">
-                      <p className="p1">₹1,439</p>
-                      <p className="p2"><s>₹2,399</s></p>
-                      <p className="p3">(40% OFF)</p>
-                    </div>
-                    <h5 className="card-title">Solid Stretch Slim Fit Shirt | Navy...</h5>
-                    <a href="#" className="btn border border-dark rounded">Add To Bag</a>
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="img">
-                    <img src="/images/ssncard7.webp" className="w-100 h-auto rounded-3" alt="..." />
-                  </div>
-                  <div className="card-body p-1">
-                    <div className="card-text">
-                      <p className="p1">₹1,439</p>
-                      <p className="p2"><s>₹2,399</s></p>
-                      <p className="p3">(40% OFF)</p>
-                    </div>
-                    <h5 className="card-title">Solid Stretch Slim Fit Shirt | Navy...</h5>
-                    <a href="#" className="btn border border-dark rounded">Add To Bag</a>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -177,7 +114,7 @@ const Home = () => {
           </a>
         </div>
       </div>
-      <div className="categories p-3">
+      <div className="categories p-3">   {/* trending categories starting from here */}
         <h1 className="head2"> TRENDING CATEGORIES </h1>
         <div className="cat-party d-flex justify-content-around">
           <img src="/images/trendCatg1.webp" className="border rounded-4 float-start " alt="..." style={{ width: "650px", height: "400px" }} />
@@ -213,14 +150,6 @@ const Home = () => {
             </div>
           ))}
         </div>
-        {/* <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Next</span>
-        </button> */}
       </div>
 
       {/* wallpapers of wrogn  */}
@@ -235,9 +164,9 @@ const Home = () => {
 
       <div className="store">
         <div className="categories p-3">
-          <div className="cat-party d-flex justify-content-around">
-            <p className="title fs-3">GENZBUY STORE.<br /><span className="titl-bold"> RIGHT PLACE.</span><br /><span className="titl-para"> For The Latest Fashion Trends.</span></p>
-            <img src="/images/Big.webp" className="rounded-4 float-start rounded-4 float-end border" alt="..." style={{ width: "650px", height: "400px" }} />
+          <div className="textwithimage">
+            <p className="title1">GENZBUY STORE.<br /><span className="title2"> RIGHT PLACE.</span><br /><span className="title3">Find how close you’re to going wrogn!</span></p>
+            <img src="/images/Big.webp" className="rounded-4 float-end rounded-4 border" alt="..." style={{ width: "650px", height: "400px" }} />
           </div>
           <div className="store-img d-flex justify-content-around m-3">
             <img src="/images/Big.webp" className="rounded-4 float-end border" alt="..." style={{ width: "560px", height: "450px" }} />

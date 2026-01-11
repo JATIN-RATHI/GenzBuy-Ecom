@@ -1,5 +1,5 @@
 import React from 'react';
-import App from './FilterData.jsx';
+import App from './FilterSection.jsx';
 import { Link } from 'react-router-dom';
 import { fresharrivalimages } from '../components/imgColl.jsx'
 const FreshArrivals = () => {
@@ -32,26 +32,30 @@ const FreshArrivals = () => {
           </div>
         </div>
       </div>
-      <div className="rightdiv">
-        <div className="cards-wrapper d-flex flex-wrap justify-content-space-between" >
-          {fresharrivalimages.map((item) => (
-            <div className="card" key={item.id}>
-              <div className="img">
-                <img src={`${item.url}`} className=" w-100 h-100 rounded-3" />
-              </div>
-              <div className="card-body p-1">
-                <div className="card-text">
-                  <p className="p1">₹1,439</p>
-                  <p className="p2"><s>₹2,399</s></p>
-                  <p className="p3">(40% OFF)</p>
+      <div style={{ width: '95%', margin: 'auto' }}>
+        <div className="rightdiv">
+          <div className="cards-wrapper d-flex flex-wrap justify-content-space-between" >
+            {fresharrivalimages.map((item) => (
+              <div className="card" key={item.id}>
+                <div className="img">
+                  <img src={`${item.url}`} className=" w-100 h-100 rounded-3" />
                 </div>
-                <a href="#" className="btn border border-dark rounded">Add To Bag</a>
+                <div className="card-body p-1">
+                  <div className="card-text">
+                    <p className="p1">₹1,439</p>
+                    <p className="p2"><s>₹2,399</s></p>
+                    <p className="p3">(40% OFF)</p>
+                  </div>
+                  <a href="#" className="btn border border-dark rounded">Add To Bag</a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+        <div className="leftDiv">
+          <App />
         </div>
       </div>
-      <App />
     </>
   )
 }

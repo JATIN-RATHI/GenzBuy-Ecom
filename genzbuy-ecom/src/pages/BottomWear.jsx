@@ -1,5 +1,5 @@
 import React from 'react';
-import App from './FilterData.jsx';
+import App from './FilterSection.jsx';
 import { Link } from 'react-router-dom';
 import { bottomWearImages } from '../components/imgColl.jsx'
 const BottomWear = () => {
@@ -31,13 +31,14 @@ const BottomWear = () => {
             <img src="/images/ban12.webp" className="carl-img carousel-item active" alt="Banner 2" />
           </div>
         </div>
-      </div> 
-      <div className="rightdiv">
-        <div className="cards-wrapper d-flex flex-wrap justify-content-space-between" >
-          {bottomWearImages.map((item) => (
-            <div className="card" key={item.id}>
+      </div>
+      <div style={{ width: '95%', margin: 'auto' }}>
+        <div className="rightdiv">
+          <div className="cards-wrapper d-flex flex-wrap justify-content-space-between" >
+            {bottomWearImages.map((item) => (
+              <div className="card" key={item.id}>
                 <div className="img">
-                  <img src={`${item.url}`} className=" w-100 h-100 rounded-3"/>
+                  <img src={`${item.url}`} className=" w-100 h-100 rounded-3" />
                 </div>
                 <div className="card-body p-1">
                   <div className="card-text">
@@ -48,11 +49,14 @@ const BottomWear = () => {
                   <h5 className="card-title">{item.name}</h5>
                   <a href="#" className="btn border border-dark rounded">Add To Bag</a>
                 </div>
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="leftDiv">
+          <App />
         </div>
       </div>
-      <App />
     </>
   );
 };

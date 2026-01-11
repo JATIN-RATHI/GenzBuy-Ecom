@@ -1,26 +1,31 @@
-
+.container2{
+  width: 20rem;
+}
 .viewAll{
-    font-size: 27px;
-    font-weight: bold;
+  font-size: 27px;
+  display: flex;
+  justify-content: left;
+  margin: 0% 0% 11% 13%;
 }
 
 .title {
+  display: flex;
   font-size: 25px;
-  font-weight: bold;
-  text-align: left;
   color: #333;
-  margin: 29px 0px;
+  margin: 0% 0% 8% 13%;
 }
 
 /* Filter group */
 .filter-group {
-  margin-bottom: 20px;
+  margin-bottom: 20px ;
+  margin-left: 13%;
+  display: flex ;
+  flex-direction: column ;
 }
 
 .filter-group h3 {
   font-size: 23px;
   margin-bottom: 28px;
-  font-weight: bold;
   color: #444;
 }
 
@@ -56,6 +61,7 @@ input[type="checkbox"] {
 
 /* Button */
 .show-btn {
+  width: fit-content;
   margin-top: 8px;
   padding: 5px 10px;
   font-size: 13px;

@@ -5,7 +5,9 @@ html, body {
     font-family: 'Poppins', sans-serif;
     /* background-color: #f7cbd8; */
     /* position: relative; */
+    position: relative;
 }
+
 .home{
     background-size: cover;
     min-height: 96vh;
@@ -181,7 +183,7 @@ video{
 .card {
   width: 18%;
   height :36vh;
-  margin: 87px 18px;
+  margin: 87px 13px;
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
   border: none;
   border-radius: 54px;
@@ -229,6 +231,27 @@ video{
   top: 50%;
   transform: translateY(-50%);
 }
+
+.textwithimage{
+  padding: 3%;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.textwithimage p{
+  margin: auto;
+}
+.title1{
+  font-size: 2.5rem;
+}
+.title2{
+  font-size: 4rem;
+}
+.title3{
+  font-size: 1.5rem;
+  color: #8a7d7d;
+}
+
 @media (min-width: 768px) {
   .card img {
     height: 11em;

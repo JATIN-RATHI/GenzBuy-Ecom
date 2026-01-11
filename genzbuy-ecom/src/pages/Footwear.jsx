@@ -1,5 +1,5 @@
 import React from 'react';
-import App from './FilterData.jsx';
+import App from './FilterSection.jsx';
 import { Link } from 'react-router-dom';
 import { footwearimages } from '../components/imgColl.jsx'
 const Footwear = () => {
@@ -32,6 +32,7 @@ const Footwear = () => {
           </div>
         </div>
       </div>
+      <div style={{width: '95%', margin: 'auto'}}>
       <div className="rightdiv">
         <div className="cards-wrapper d-flex flex-wrap justify-content-space-between" >
           {footwearimages.map((item) => (
@@ -52,7 +53,10 @@ const Footwear = () => {
           ))}
         </div>
       </div>
-      <App />
+       <div className="leftDiv">
+        <App />
+       </div>
+       </div>
     </>
   )
 }

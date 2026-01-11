@@ -39,6 +39,11 @@ const seasoncardimg = [
     { id: 5, name: "ssncard5", url: "/images/ssncard5.webp" },
     { id: 6, name: "ssncard6", url: "/images/ssncard6.webp" },
     { id: 7, name: "ssncard7", url: "/images/ssncard7.webp" },
+    { id: 8, name: "ssncard8", url: "/images/ssncard8.webp" },
+    { id: 9, name: "ssncard9", url: "/images/ssncard9.webp" },
+    { id: 10, name: "ssncard10", url: "/images/ssncard10.webp" },
+    { id: 11, name: "ssncard11", url: "/images/ssncard11.webp" },
+    { id: 12, name: "ssncard12", url: "/images/ssncard12.webp" },
 ];
 
 // images for trending category

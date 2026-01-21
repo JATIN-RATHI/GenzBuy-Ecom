@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { essentials } from '../components/imgColl.jsx'
 const Essentials = () => {
   return (
-    <>
+    <div className="page-container">
       <div className="samehome">
         <div className="navbar">
           <div className="nav-links">
@@ -21,20 +21,45 @@ const Essentials = () => {
             <form className="searchbar d-flex" role="search">
               <input className="searchbar form-control me-2" type="search" placeholder="SEARCH" aria-label="Search" />
             </form>
-            <img src="./images/icons8-account.gif" alt="User Icon" className="user-icon" />
-            <img src="./images/icons8-shopping-bag.gif" alt="Cart Icon" className="cart-icon" />
+            <div className="user-menu-container">
+              <img src="./images/icons8-account.gif" alt="User Icon" className="usericon" />
+              <div className="dropdown-menu">
+                <ul>
+                  <span className="dropdownmenu-profile">PROFILE</span>
+                  <li><img src="./images/smallusericon.svg" alt="Account Icon" className="smallusericon" /><Link to="/account">ACCOUNT</Link></li>
+                  <li><img src="./images/smallcartimage.svg" alt="Orders Icon" className="smallusericon" /><Link to="/orders">ORDERS</Link></li>
+                  <li><img src="./images/smallstoreimage.svg" alt="Stores Icon" className="smallusericon" /><Link to="/stores">FIND STORE</Link></li>
+                </ul>
+                <div className="login-btn-container">
+                  <button className="login-btn">Login</button>
+                </div>
+              </div>
+            </div>
+            <button className="carticonbtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./images/icons8-shopping-bag.gif" className="carticon" alt="Cart Icon" /></button>
+            <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+              <div className="offcanvas-header">
+                <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div className="offcanvas-body">
+                <img src="./images/empty-cart-animation.webp" alt="Empty Cart" className="emptycartimg" />
+              </div>
+            </div>
           </div>
-        </div>
         {/* carousel for banners */}
         <div id="allproductcarousel" className="allproductcarousel carousel slide p-1" data-bs-ride="carousel">
           <div className="carousel-inner2 rounded-4">
             <img src="/images/ban1.webp" className="carl-img carousel-item active" alt="Banner 2" />
           </div>
         </div>
+        </div>
       </div>
-      <div style={{ width: '95%', margin: 'auto' }}>
+      {/* <div className="catcontainer"> */}
+      <div className="main-content-wrapper">
+        <div className="leftDiv">
+          <App />
+        </div>
         <div className="rightdiv">
-          <div className="cards-wrapper d-flex flex-wrap justify-content-space-between" >
+          <div className="rightdivcards cards-wrapper d-flex flex-wrap justify-content-space-between" >
             {essentials.map((item) => (
               <div className="card" key={item.id}>
                 <div className="img">
@@ -53,11 +78,21 @@ const Essentials = () => {
             ))}
           </div>
         </div>
-        <div className="leftDiv">
-          <App />
-        </div>
       </div>
-    </>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item active">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   )
 }
 export default Essentials;

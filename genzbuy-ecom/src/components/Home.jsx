@@ -2,19 +2,29 @@ import React, { useEffect, useState } from "react";
 import "../components/Home.css";
 import { imageBanner, imageBanner2, seasoncardimg } from "../components/imgColl.jsx";
 import { Link } from "react-router-dom";
-import {client} from "../ContentfulClient.js";
+import { client } from "../ContentfulClient.js";
 
 const Home = () => {
-  const [loading,setLoading]= useState(true);
-  const [fashion,setFashion]= useState();
+  const [fashion, setFashion] = useState();
+  const [loading, setLoading] = useState(true);
+  const [showBanner, setShowBanner] = useState(false);
+
   useEffect(() => {
-    const fetchdata= async ()=>{
-      try{
-        const entries = await client.getEntries({content_type: "homePage"}); 
+    const timeout = setTimeout(() => {
+      setShowBanner(true);
+    }, 3000);
+    return () => clearTimeout(timeout);
+  }, [])
+  const closeBanner = () => (setShowBanner(false));
+
+  useEffect(() => {
+    const fetchdata = async () => {
+      try {
+        const entries = await client.getEntries({ content_type: "homePage" });
         console.log(entries);
         setLoading(false);
         setFashion(entries.items);
-      }catch(error){
+      } catch (error) {
         console.error("Error fetching data:", error);
         setLoading(false);
       }
@@ -23,10 +33,29 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, [loading]);
 
-  if(loading)return <p>Loading...</p>
-
+  if (loading) return <p className="homepgp">Loading...</p>
   return (
     <>
+    {/* 2. The Banner Markup */}
+      {showBanner && (
+        <div className="banner-overlay">
+          <div className="banner-modal">
+            <button className="close-btn" onClick={closeBanner}>&times;</button>
+            <img src="/images/wrogn-logo-timeout.png" alt="Wrogn" className="modal-logo" />
+            <h2 style={{ fontSize: "1.5rem" }}>Login Now & Enjoy Extra 10% Off</h2>
+            <div className="input-group">
+              <span className="country-code">+91</span>
+              <input type="text" placeholder="Enter Mobile Number" />
+            </div>
+            <div className="checkbox-group">
+              <input type="checkbox" id="notify" />
+              <label className="notify" style={{color:"white"}}>Notify me for any updates & offers</label>
+            </div>
+            <button className="submit-btn">Submit</button>
+            <p className="terms">By logging in, you're agreeing to our Privacy Policy Terms of Service</p>
+          </div>
+        </div>
+      )}
       <div className="home">
         <div className="navbar">
           <div className="nav-links">
@@ -43,8 +72,29 @@ const Home = () => {
             <form className="searchbar d-flex" role="search">
               <input className="searchbar form-control me-2" type="search" placeholder="SEARCH" aria-label="Search" />
             </form>
-            <img src="./images/icons8-account.gif" alt="User Icon" className="user-icon" />
-            <img src="./images/icons8-shopping-bag.gif" alt="Cart Icon" className="cart-icon" />
+            <div className="user-menu-container">
+              <img src="./images/icons8-account.gif" alt="User Icon" className="usericon" />
+              <div className="dropdown-menu">
+                <ul>
+                  <span className="dropdownmenu-profile">PROFILE</span>
+                  <li><img src="./images/smallusericon.svg" alt="Account Icon" className="smallusericon" /><Link to="/account">ACCOUNT</Link></li>
+                  <li><img src="./images/smallcartimage.svg" alt="Orders Icon" className="smallusericon" /><Link to="/orders">ORDERS</Link></li>
+                  <li><img src="./images/smallstoreimage.svg" alt="Stores Icon" className="smallusericon" /><Link to="/stores">FIND STORE</Link></li>
+                </ul>
+                <div className="login-btn-container">
+                  <button className="login-btn">Login</button>
+                </div>
+              </div>
+            </div>
+            <button className="carticonbtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./images/icons8-shopping-bag.gif" className="carticon" alt="Cart Icon" /></button>
+            <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+              <div className="offcanvas-header">
+                <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div className="offcanvas-body">
+                <img src="./images/empty-cart-animation.webp" alt="Empty Cart" className="emptycartimg" />
+              </div>
+            </div>
           </div>
         </div>
         {/* carousel for banners */}

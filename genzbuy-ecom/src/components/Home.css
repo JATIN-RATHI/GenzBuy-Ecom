@@ -23,9 +23,7 @@ body {
   z-index: 9999; 
   border-top: 1px solid white;
   border-radius: 7px;
-  /* Ensure it's above everything */
 }
-
 /* The Modal Card */
 .banner-modal {
   background: #000;
@@ -220,11 +218,35 @@ img {
 
 .offcanvas-body {
   width: 100%;
+  background-color: #f6f6f6;
 }
 
+.mybag{
+  font-weight: -600;
+  font-size: 18px;
+}
 .emptycartimg {
-  width: 50%;
-  height: auto;
+  width: 40%;
+  margin: 15px auto;
+  display: flex;
+  border: 0.2px solid #e5e4e4;
+}
+.offcanvas-body-p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #555;
+}
+.shoppingbtn{
+  background-color: black;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 11px 45px;
+  font-size: 12px;
+  font-weight: 600;
+  margin: auto;
+  display: flex;
 }
 .smallusericon{
   width: 20px;

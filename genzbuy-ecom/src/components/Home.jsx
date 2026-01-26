@@ -33,10 +33,21 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, [loading]);
 
+  useEffect(() => {
+    if (showBanner) {
+      document.body.style.overflow = 'hidden';  // Disable scrolling
+    } else {
+      document.body.style.overflow = 'unset';  // Re-enable scrolling
+    }
+    return () => {
+      document.body.style.overflow = 'unset';  // Cleanup function to ensure scroll is restored if component unmounts unexpectedly
+    };
+  }, [showBanner]);
+
   if (loading) return <p className="homepgp">Loading...</p>
   return (
     <>
-    {/* 2. The Banner Markup */}
+      {/* 2. The Banner Markup */}
       {showBanner && (
         <div className="banner-overlay">
           <div className="banner-modal">
@@ -49,7 +60,7 @@ const Home = () => {
             </div>
             <div className="checkbox-group">
               <input type="checkbox" id="notify" />
-              <label className="notify" style={{color:"white"}}>Notify me for any updates & offers</label>
+              <label className="notify" style={{ color: "white" }}>Notify me for any updates & offers</label>
             </div>
             <button className="submit-btn">Submit</button>
             <p className="terms">By logging in, you're agreeing to our Privacy Policy Terms of Service</p>
@@ -89,10 +100,14 @@ const Home = () => {
             <button className="carticonbtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./images/icons8-shopping-bag.gif" className="carticon" alt="Cart Icon" /></button>
             <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
               <div className="offcanvas-header">
+                <span className="mybag">My Bag</span>
                 <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
               <div className="offcanvas-body">
                 <img src="./images/empty-cart-animation.webp" alt="Empty Cart" className="emptycartimg" />
+                <p className="offcanvas-body-p">Your cart's empty! Time to treat it To some goodies!</p>
+                <button className="shoppingbtn">Start Shopping</button>
+                <p className="offcanvas-body-p">Have an account? <Link to="/login">Login</Link> to see products added to cart</p>
               </div>
             </div>
           </div>

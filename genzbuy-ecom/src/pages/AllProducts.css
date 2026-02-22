@@ -21,11 +21,11 @@ body::-webkit-scrollbar {
     max-width: 1400px;
     flex-wrap: wrap;    
 }
-img{
+/* img{
     cursor: pointer;
     width: 165px;
     height: auto;
-}
+} */
 .logo{
     width: 5%;
     height: 5%;

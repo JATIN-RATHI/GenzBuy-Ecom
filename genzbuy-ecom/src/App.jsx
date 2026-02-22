@@ -7,6 +7,7 @@ import Footwear from "./pages/Footwear";
 import FreshArrivals from "./pages/FreshArrivals";
 import Essentials from "./pages/Essentials";
 import { client } from "./ContentfulClient";
+import Account from "./pages/Account";
 
 function App() {
   console.log(client);
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Footwear" element={<Footwear />} />
         <Route path="/FreshArrivals" element={<FreshArrivals />} />
         <Route path="/Essentials" element={<Essentials />} />
+        <Route path="/Account" element={<Account />} />
       </Routes>
     </BrowserRouter>
   );

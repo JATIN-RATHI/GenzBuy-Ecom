@@ -39,17 +39,21 @@ function AllProducts() {
             <button className="carticonbtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./images/icons8-shopping-bag.gif" className="carticon" alt="Cart Icon" /></button>
             <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
               <div className="offcanvas-header">
+                <span className="mybag">My Bag</span>
                 <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
               <div className="offcanvas-body">
                 <img src="./images/empty-cart-animation.webp" alt="Empty Cart" className="emptycartimg" />
+                <p className="offcanvas-body-p">Your cart's empty! Time to treat it To some goodies!</p>
+                <button className="shoppingbtn">Start Shopping</button>
+                <p className="offcanvas-body-p">Have an account? <Link to="/login">Login</Link> to see products added to cart</p>
               </div>
             </div>
           </div>
           {/* carousel for banners */}
           <div id="allproductcarousel" className="allproductcarousel carousel slide p-1" data-bs-ride="carousel">
             <div className="carousel-inner2 rounded-4">
-              <img src="/images/ban12.webp" className="carl-img carousel-item active" alt="Banner 2" />
+              <img src="/images/ban5.webp" className="carl-img carousel-item active" alt="Banner 2" />
             </div>
           </div>
         </div>

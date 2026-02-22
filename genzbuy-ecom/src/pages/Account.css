@@ -1,0 +1,81 @@
+.accmodal{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+}
+.account{
+    width: 60%;
+    background: black;
+    height: 50%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+.loginfieldclosebtn{
+    position: absolute;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    right: -29px;
+    top: -35px;
+}
+.leftdiv{
+    width: 60%;
+    color: white;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.allboxes{
+    border: 1px solid black ;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.boxes{
+    width: 27%;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    font-size: 12px;
+    border-radius: 15px;
+    padding: 20px;
+    font-weight: 600;
+}
+.loginfield{
+    width: 35%;
+    min-height:48% ;
+    border-radius: 7px;
+    background: white;
+    color: black;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    margin: 21px;
+    padding: 19px 0px;
+}
+.loginfieldinput{
+    width: 78%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgb(172, 171, 171);
+    border-radius: 5px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.1);
+}
